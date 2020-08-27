@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/fruitstore</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+    <property name="format_sql">true</property>
+    <property name="show_sql">true</property>
+      <mapping resource="xml/Address.hbm.xml"/>
+    <mapping resource="xml/Car.hbm.xml"/>
+    <mapping resource="xml/Collection.hbm.xml"/>
+    <mapping resource="xml/Comment.hbm.xml"/>
+    <mapping resource="xml/Customer.hbm.xml"/>
+    <mapping resource="xml/Customerinfo.hbm.xml"/>
+    <mapping resource="xml/Custpoint.hbm.xml"/>
+    <mapping resource="xml/Goods.hbm.xml"/>
+    <mapping resource="xml/Goodstype.hbm.xml"/>
+    <mapping resource="xml/Orderdetail.hbm.xml"/>
+    <mapping resource="xml/Orders.hbm.xml"/>
+    <mapping resource="xml/Paytype.hbm.xml"/>
+    <mapping resource="xml/Orderstatetype.hbm.xml"/>
+    <mapping resource="xml/Car.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

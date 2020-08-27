@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.flh.model.entity.Comment" table="comment" schema="fruitstore">
+        <id name="commetId" column="commet_id">
+            <generator class="native"/>
+        </id>
+        <property name="commentContext" column="comment_context"/>
+        <property name="commentTime" column="comment_time"/>
+        <many-to-one name="customer" column="cust_id" class="com.flh.model.entity.Customer" lazy="false"/>
+        <many-to-one name="goods" column="goods_id" class="com.flh.model.entity.Goods" lazy="false"/>
+    </class>
+</hibernate-mapping>

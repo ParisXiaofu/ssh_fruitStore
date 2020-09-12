@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.flh.model.entity.Collection" table="collection" schema="fruitstore">
+        <id name="collectionId" column="collection_id">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="customer" column="cust_id" class="com.flh.model.entity.Customer" lazy="false"/>
+        <many-to-one name="goods" column="goods_id" class="com.flh.model.entity.Goods" lazy="false" unique="true"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.flh.model.entity.Goods" table="goods" schema="fruitstore">
+        <id name="goodsId" column="goods_id">
+            <generator class="native"/>
+        </id>
+        <property name="goodsCreateTime" column="goods_createTime"/>
+        <property name="goodsName" column="goods_name"/>
+        <property name="goodsPrice" column="goods_price"/>
+        <property name="goodsInfo" column="goods_info"/>
+        <property name="goodsPic" column="goods_pic"/>
+        <property name="teamBuy" column="teamBuy"/>
+        <property name="teamBuyPrice" column="teamBuy_price"/>
+        <property name="beginTime" column="beginTime"/>
+        <property name="endTime" column="endTime"/>
+        <property name="pointBuy" column="pointBuy"/>
+        <property name="pointBuyPrice" column="pointBuy_price"/>
+        <property name="goodsSales" column="goods_sales"/>
+        <property name="goodsInventory" column="goods_inventory"/>
+        <set name="commentSet" cascade="all" lazy="false">
+            <key column="goods_id"></key>
+            <one-to-many class="com.flh.model.entity.Comment"></one-to-many>
+        </set>
+        <many-to-one name="goodstype" column="goodsType_id" class="com.flh.model.entity.Goodstype" lazy="false"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.flh.model.entity.Orders" table="orders" schema="fruitstore">
+        <id name="ordersId" column="orders_id">
+            <generator class="native"/>
+        </id>
+        <property name="ordersTotalPage" column="orders_totalPage"/>
+        <property name="ordersCreateTime" column="orders_createTime"/>
+        <property name="invoice" column="invoice"/>
+        <property name="ordersMessage" column="orders_message"/>
+        <property name="pointget" column="pointget"/>
+        <many-to-one name="customer" column="cust_id" class="com.flh.model.entity.Customer" lazy="false"/>
+        <many-to-one name="address" column="address_id" class="com.flh.model.entity.Address" lazy="false" />
+        <many-to-one name="paytype" column="payType_id" class="com.flh.model.entity.Paytype" lazy="false" />
+        <many-to-one name="orderstatetype"  column="orderStateType_id" class="com.flh.model.entity.Orderstatetype" lazy="false"/>
+        <set name="orderdetailSet" cascade="all" lazy="false">
+            <key column="orders_id"></key>
+            <one-to-many class="com.flh.model.entity.Orderdetail"></one-to-many>
+        </set>
+     </class>
+</hibernate-mapping>

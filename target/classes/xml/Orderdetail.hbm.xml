@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.flh.model.entity.Orderdetail" table="orderdetail" schema="fruitstore">
+        <id name="orderdetailId" column="orderdetail_id">
+            <generator class="native"/>
+        </id>
+        <property name="orderFruitNum" column="orderFruit_num"/>
+        <property name="orderFruitMoney" column="orderFruit_money"/>
+        <many-to-one name="goods" column="goods_id" class="com.flh.model.entity.Goods" lazy="false"/>
+        <many-to-one name="orders" class="com.flh.model.entity.Orders" column="orders_id" lazy="false"/>
+     </class>
+</hibernate-mapping>
